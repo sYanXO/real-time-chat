@@ -1,4 +1,4 @@
-import { Store,Chat, UserId } from "./store/Store";
+import { Store,Chat, UserId } from "./Store";
 let globalChatId = 0;
 export interface Room{
     roomId:string,
@@ -7,7 +7,7 @@ export interface Room{
 export class inMemoryStore implements Store{
     private store: Map<string,Room>
     constructor(){
-        this.store = new Map<string,Room>
+        this.store = new Map<string,Room>();
     }
 
     initRoom(roomId:string){
